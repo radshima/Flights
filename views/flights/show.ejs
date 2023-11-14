@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<h1>Flight Details</h1>
+<dl>
+  <dt>Airline:</dt>
+  <dd><%= flight.airline %></dd>
+
+  <dt>Airport:</dt>
+  <dd><%= flight.airport %></dd>
+
+  <dt>Flight Number:</dt>
+  <dd><%= flight.flightNo %></dd>
+
+  <dt>Departs:</dt>
+  <dd><%= flight.departs %></dd>
+</dl>
+<a href="/flights">Back to All Flights</a>
+
+<h2>Tickets for this Flight</h2>
+<ul>
+  <% tickets.forEach(ticket => { %>
+    <li>
+      Seat: <%= ticket.seat %>
+      Price: <%= ticket.price %>
+    </li>
+  <% }); %>
+</ul>
+<a href="/flights/<%= flight._id %>/tickets/new">New Ticket</a>
+
